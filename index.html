@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <div class="top-menu" id="menuBtn" onclick="openMenu()">
+    <i class="fa-solid fa-bars"></i>
+    <span>Menu</span>
+  </div>
+
+  <div class="sidebar" id="sidebar">
+
+    <div class="sidebar-header">
+      <h1>Menu</h1>
+
+      <i class="fa-solid fa-xmark close-btn"
+      onclick="closeMenu()"></i>
+    </div>
+
+    <a href="#" onclick="switchPage('home')">Home</a>
+    <a href="#" onclick="switchPage('gallery')">Gallery</a>
+
+  </div>
+
+  <div class="overlay" id="overlay" onclick="closeMenu()"></div>
+    
+  <div class="container" id="mainContainer">
+
+    <div class="profile">
+      <img src="BG Shadow.png" alt="profile">
+
+      <div>
+        <h1>Arta Lino Givana</h1>
+      </div>
+    </div>
+
+    <hr>
+
+    <div id="homeContent">
+      <div class="about">
+        <p>
+          25 year old web developer 🚀 based in Indonesia
+          learning HTML CSS and JavaScript.
+        </p>
+
+        <a href="mailto:artalino.givana@gmail.com">
+          Interested in working together? Email me!
+        </a>
+      </div>
+
+      <hr>
+
+      <section>
+        <h2>Liked video</h2>
+
+        <div class="card">
+          <iframe
+            src="https://www.youtube.com/embed/5z6fDNwS_AI"
+            title="YouTube video"
+            frameborder="0"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </section>
+
+      <hr>
+
+      <section>
+        <h2>Check out my music</h2>
+
+        <div class="card">
+          <iframe style="border-radius:12px"
+            src="https://open.spotify.com/embed/playlist/5ImQ7S1m7cB6zz1pMaSmEw"
+            width="100%"
+            height="152"
+            frameBorder="0"
+            allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+          </iframe>
+        </div>
+      </section>
+    </div>
+
+    <div id="galleryContent" style="display: none;">
+      <div class="gallery-final-grid">
+        
+        <div class="gallery-text-zone">
+          <h2>Like a photo album...</h2>
+          <p>my portfolio is a journey of self-definition that captures the essence of my existence with each piece and each project.</p>
+          <p class="pink-text">Tap on the photos to learn more about each project!</p>
+        </div>
+
+        <div class="photo-box"><img src="BG Shadow.png" alt="Photo 1"></div>
+        <div class="photo-box"><img src="BG Shadow.png" alt="Photo 2"></div>
+        <div class="photo-box"><img src="BG Shadow.png" alt="Photo 3 (Left Featured)"></div>
+        <div class="photo-box"><img src="BG Shadow.png" alt="Photo 4"></div>
+        <div class="photo-box"><img src="BG Shadow.png" alt="Photo 5"></div>
+
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="socials">
+
+      <a href="https://www.youtube.com/@artalinogivana3593" target="_blank">
+        <i class="fa-brands fa-youtube"></i>
+      </a>
+
+      <a href="https://www.instagram.com/artalin0/" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+
+      <a href="https://open.spotify.com/user/8pem6ie5mcyctp1nbjc3gnghw?si=a6e95a8ec6414970" target="_blank">
+        <i class="fa-brands fa-spotify"></i>
+      </a>
+
+      <a href="mailto:artalino.givana@gmail.com">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+
+    </div>
+
+    <footer>
+      © 2026 Arta Lino, All Rights Reserved
+    </footer>
+
+  </div>
+
+  <script>
+  function openMenu(){
+    document.getElementById("sidebar").classList.add("active");
+    document.getElementById("overlay").classList.add("show");
+    document.getElementById("menuBtn").style.display = "none";
+  }
+
+  function closeMenu(){
+    document.getElementById("sidebar").classList.remove("active");
+    document.getElementById("overlay").classList.remove("show");
+    document.getElementById("menuBtn").style.display = "flex";
+  }
+
+  function switchPage(pageName) {
+    const container = document.getElementById("mainContainer");
+    
+    if (pageName === 'home') {
+      document.getElementById("homeContent").style.display = "block";
+      document.getElementById("galleryContent").style.display = "none";
+      container.classList.remove("wide-container");
+    } else if (pageName === 'gallery') {
+      document.getElementById("homeContent").style.display = "none";
+      document.getElementById("galleryContent").style.display = "block";
+      container.classList.add("wide-container");
+    }
+    closeMenu();
+  }
+  </script>
+
+</body>
+</html>
